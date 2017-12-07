@@ -10,7 +10,7 @@ pipeline {
         }
         stage('bash') {
           steps {
-            bash 'ls -al'
+            sh 'ls -al'
           }
         }
       }
