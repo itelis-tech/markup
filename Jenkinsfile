@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('ls') {
-      steps {
-        echo 'test'
+      parallel {
+        stage('ls') {
+          steps {
+            echo 'test'
+          }
+        }
+        stage('bash') {
+          steps {
+            sh 'ls -al'
+          }
+        }
       }
     }
   }
